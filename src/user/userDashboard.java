@@ -114,6 +114,7 @@ public class userDashboard extends javax.swing.JFrame {
         this.dispose();
     }else{
         acc_name.setText("" + sess.getFname());
+        acc_lname.setText("" + sess.getLname());
     }
      
     }//GEN-LAST:event_formWindowActivated

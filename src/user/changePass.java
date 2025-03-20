@@ -27,17 +27,18 @@ public class changePass extends javax.swing.JFrame {
         acc_lname = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         acc_fname = new javax.swing.JLabel();
-        firstName = new javax.swing.JLabel();
-        oldpass = new javax.swing.JTextField();
-        lastName = new javax.swing.JLabel();
-        newpass = new javax.swing.JTextField();
-        mail = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        back = new javax.swing.JButton();
-        conpass = new javax.swing.JPasswordField();
+        iddisplay1 = new javax.swing.JLabel();
         iddisplay = new javax.swing.JLabel();
+        firstName = new javax.swing.JLabel();
+        lastName = new javax.swing.JLabel();
+        mail = new javax.swing.JLabel();
+        save = new javax.swing.JButton();
+        oldpass = new javax.swing.JPasswordField();
+        newpass = new javax.swing.JPasswordField();
+        conpass = new javax.swing.JPasswordField();
+        logout = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        logut = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -69,73 +70,63 @@ public class changePass extends javax.swing.JFrame {
         acc_fname.setText("USER");
         jPanel3.add(acc_fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 170, 20));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 410));
+        iddisplay1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        iddisplay1.setForeground(new java.awt.Color(255, 255, 255));
+        iddisplay1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        iddisplay1.setText("current user");
+        jPanel3.add(iddisplay1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 90, 20));
+
+        iddisplay.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        iddisplay.setForeground(new java.awt.Color(255, 255, 255));
+        iddisplay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        iddisplay.setText("id");
+        jPanel3.add(iddisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 130, 30));
+
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 330));
 
         firstName.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         firstName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         firstName.setText("Type Old Pass:");
-        jPanel2.add(firstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, 150, -1));
-
-        oldpass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                oldpassActionPerformed(evt);
-            }
-        });
-        jPanel2.add(oldpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 260, 40));
+        jPanel2.add(firstName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 150, -1));
 
         lastName.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        lastName.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lastName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lastName.setText("Enter New Pass:");
-        jPanel2.add(lastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 180, 20));
-
-        newpass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newpassActionPerformed(evt);
-            }
-        });
-        jPanel2.add(newpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, 260, 40));
+        jPanel2.add(lastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 150, 20));
 
         mail.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         mail.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        mail.setText("Confirm:");
-        jPanel2.add(mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 130, 20));
+        mail.setText("Confirm Pass:");
+        jPanel2.add(mail, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, 140, 20));
 
-        jButton1.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        jButton1.setText("Save");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        save.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        save.setText("Save");
+        save.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                saveMouseClicked(evt);
             }
         });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                saveActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, 80, 40));
+        jPanel2.add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 110, 40));
+        jPanel2.add(oldpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, 220, 40));
+        jPanel2.add(newpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 220, 40));
+        jPanel2.add(conpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, 220, 40));
 
-        back.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        back.setText("Back");
-        back.addMouseListener(new java.awt.event.MouseAdapter() {
+        logout.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        logout.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logout.setText("LOG OUT");
+        logout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                backMouseClicked(evt);
+                logoutMouseClicked(evt);
             }
         });
-        back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backActionPerformed(evt);
-            }
-        });
-        jPanel2.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 250, 80, 40));
-        jPanel2.add(conpass, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, 260, 40));
+        jPanel2.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 290, 80, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 700, 330));
-
-        iddisplay.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        iddisplay.setForeground(new java.awt.Color(255, 255, 255));
-        iddisplay.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        iddisplay.setText("(UID)");
-        jPanel1.add(iddisplay, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 130, 30));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -143,15 +134,10 @@ public class changePass extends javax.swing.JFrame {
         jLabel5.setText("ACCOUNT INFORMATION");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 10, 340, 30));
 
-        logut.setBackground(new java.awt.Color(153, 153, 255));
-        logut.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        logut.setText("LOG OUT");
-        logut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logutActionPerformed(evt);
-            }
-        });
-        jPanel1.add(logut, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 130, 40));
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("BACK");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 10, 80, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -170,86 +156,90 @@ public class changePass extends javax.swing.JFrame {
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
          Session sess = Session.getInstance();
- 
+   if(sess.getUid()== 0){
+     JOptionPane.showMessageDialog(null,"No Account, Login First");
+     loginForm lf = new loginForm();
+     lf.setVisible(true);
+     this.dispose();
+     }else{
         iddisplay.setText(""+sess.getUid());
+        acc_fname.setText(""+sess.getFname());
+        acc_lname.setText(""+sess.getLname());
         
-
+   }
     }//GEN-LAST:event_formWindowActivated
 
-    private void logutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logutActionPerformed
-        int confirm = JOptionPane.showConfirmDialog(null, "Are you sure you want to logout?", "Logout Confirmation", JOptionPane.YES_NO_OPTION);
-
-        if (confirm == JOptionPane.YES_OPTION) {
-
-            loginForm login = new loginForm(); // Assuming loginForm is your login screen class
-            login.setVisible(true); // Make the login form visible
-
-            // Dispose of the current frame
-            this.dispose(); // Close the current window
-        }
+    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_logutActionPerformed
+    }//GEN-LAST:event_saveActionPerformed
 
-    private void newpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newpassActionPerformed
-        String lastName = newpass.getText().trim();
+    private void saveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveMouseClicked
+        try {
+            dbConnector dbc = new dbConnector();
+            Session sess = Session.getInstance();
 
-        if (lastName.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Last Name cannot be empty!");
-            return;
+            String query = "SELECT * FROM tbl_user WHERE u_id = '" + sess.getUid() + "'";
+            ResultSet rs = dbc.getData(query);
+
+            if (rs.next()) {
+                String olddbpass = rs.getString("u_password"); // Get stored hashed password
+                String oldhash = passwordHasher.hashPassword(oldpass.getText().trim()); // Hash input old password
+
+                if (olddbpass.equals(oldhash)) { // If old password is correct
+
+                    String newPass = newpass.getText().trim();
+                    String confirmPass = conpass.getText().trim();
+
+                    // Validate if new password and confirm password match
+                    if (!newPass.equals(confirmPass)) {
+                        JOptionPane.showMessageDialog(null, "New Password and Confirm Password do not match!");
+                        newpass.setText("");
+                        conpass.setText("");
+                        return;
+                    }
+
+                    // Validate if new password is different from old password
+                    if (newPass.equals(oldpass.getText().trim())) {
+                        JOptionPane.showMessageDialog(null, "New password must be different from the old password!");
+                        newpass.setText("");
+                        conpass.setText("");
+                        return;
+                    }
+
+                    // Validate password strength (at least 8 characters, 1 uppercase letter)
+                    if (!isValidPassword(newPass)) {
+                        JOptionPane.showMessageDialog(null, "Invalid password! Must be at least 8 characters and include an uppercase letter.");
+                        newpass.setText("");
+                        conpass.setText("");
+                        return;
+                    }
+
+                    // Hash the new password before storing
+                    String npass = passwordHasher.hashPassword(newPass);
+
+                    // Update the password in the database
+                    dbc.updateData("UPDATE tbl_user SET u_password = '" + npass + "' WHERE u_id = '" + sess.getUid() + "'");
+
+                    JOptionPane.showMessageDialog(null, "Successfully Updated!");
+                    loginForm lg = new loginForm();
+                    lg.setVisible(true);
+                    this.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Old Password is incorrect!");
+                }
+            }
+        } catch (SQLException | NoSuchAlgorithmException ex) {
+            System.out.println("Error: " + ex);
         }
-    }//GEN-LAST:event_newpassActionPerformed
 
-    private void oldpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oldpassActionPerformed
-        String firstName = oldpass.getText().trim();
-        if (firstName.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "First Name cannot be empty!");
-            return;
-        }
-    }//GEN-LAST:event_oldpassActionPerformed
+    }//GEN-LAST:event_saveMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        try{
-        dbConnector dbc = new dbConnector();
-        Session sess = Session.getInstance();
-        
-        String query = "SELECT*FROM tbl_user WHERE u_id ='"+sess.getUid()+"'";
-        ResultSet rs = dbc.getData(query);
-        if(rs.next()){
-           String olddbpass = rs.getString("u_password");
-           String oldhash = passwordHasher.hashPassword(oldpass.getText());
-   
-        if(olddbpass.equals(oldhash)){
-           String npass = passwordHasher.hashPassword(newpass.getText());
-           dbc.updateData("UPDATE tbl_user SET u_password = '"+npass+"'");
-              JOptionPane.showMessageDialog(null, "Successfully Updated!");
-              loginForm lg =  new loginForm();
-              lg.setVisible(true);
-              this.dispose();
-        }else{
-              JOptionPane.showMessageDialog(null, "Old Password is incorrect!");
-          }
-   
-           }
-           }catch(SQLException | NoSuchAlgorithmException ex){
-            System.out.println(""+ex);
-         }
-        
-    }//GEN-LAST:event_jButton1MouseClicked
-
-    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_backActionPerformed
-
-    private void backMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backMouseClicked
-       userDashboard usd = new userDashboard();
-       usd.setVisible(true);
-       this.dispose();
-    }//GEN-LAST:event_backMouseClicked
-
+    }//GEN-LAST:event_logoutMouseClicked
+   private boolean isValidPassword(String password) {
+        String pattern = "^(?=.*[A-Z]).{8,}$";
+        return password.matches(pattern);}
     /**
      * @param args the command line arguments
      */
@@ -291,20 +281,21 @@ public class changePass extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel acc_fname;
     private javax.swing.JLabel acc_lname;
-    private javax.swing.JButton back;
     private javax.swing.JPasswordField conpass;
     private javax.swing.JLabel firstName;
     private javax.swing.JLabel iddisplay;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel iddisplay1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lastName;
-    private javax.swing.JButton logut;
+    private javax.swing.JLabel logout;
     private javax.swing.JLabel mail;
-    private javax.swing.JTextField newpass;
-    private javax.swing.JTextField oldpass;
+    private javax.swing.JPasswordField newpass;
+    private javax.swing.JPasswordField oldpass;
+    private javax.swing.JButton save;
     // End of variables declaration//GEN-END:variables
 }

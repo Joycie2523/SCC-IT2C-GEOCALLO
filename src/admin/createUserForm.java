@@ -400,13 +400,13 @@ public boolean duplicateCheck(){
                 removeActionPerformed(evt);
             }
         });
-        jPanel4.add(remove, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 380, 100, -1));
+        jPanel4.add(remove, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 370, 100, -1));
 
         jPanel5.setLayout(null);
         jPanel5.add(image);
-        image.setBounds(6, 8, 240, 300);
+        image.setBounds(6, 28, 240, 240);
 
-        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 50, 250, 310));
+        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 80, 250, 280));
 
         refresh1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         refresh1.setText("REFRESH");
@@ -424,23 +424,19 @@ public boolean duplicateCheck(){
                 selectActionPerformed(evt);
             }
         });
-        jPanel4.add(select, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 380, 100, -1));
+        jPanel4.add(select, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 100, -1));
 
-        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 750, 510));
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 740, 510));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 760, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 565, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
         );
 
         pack();

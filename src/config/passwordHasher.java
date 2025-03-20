@@ -13,5 +13,9 @@ public class passwordHasher {
         String encoded = Base64.getEncoder().encodeToString(hashBytes);
         return encoded;
     }
+
+    public static boolean verifyPassword(String text, String olddbpass) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

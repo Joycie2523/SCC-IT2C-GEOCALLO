@@ -19,35 +19,44 @@ public class registerForm extends javax.swing.JFrame {
 
     dbConnector dbc = new dbConnector();
     
-    try { 
-        // Correct the query syntax
-        String query = "SELECT * FROM tbl_user WHERE u_username = '" + user.getText() + "' OR email = '" + email.getText() + "'";
-        
-        ResultSet resultSet = dbc.getData(query);
-
-        if (resultSet.next()) {
-            em = resultSet.getString("email");
-            System.out.println("" + em); 
-            if (em.equals(email.getText())) { 
-                JOptionPane.showMessageDialog(null, "Email is already used!");
-               email.setText(""); 
-                return true; 
-            }
-            usname = resultSet.getString("u_username");
-            System.out.println("" + usname); 
-            if (usname.equals(user.getText())) { 
-                JOptionPane.showMessageDialog(null, "Username is already used!");
-                  user.setText(""); 
-                return true; 
-            }
-        }
-        return false; 
-    } catch (SQLException ex) {
-        System.out.println("" + ex);
-        return false; 
+  try {
+    // Validate email format
+    String emailInput = email.getText();
+    if (!emailInput.matches("^[a-zA-Z0-9._%+-]+@gmail\\.com$")) {
+        JOptionPane.showMessageDialog(null, "Invalid email format! Email must be @gmail.com");
+        email.setText("");
+        return true;
     }
+
+    // Correct the query syntax
+    String query = "SELECT * FROM tbl_user WHERE u_username = '" + user.getText() + "' OR email = '" + emailInput + "'";
+    ResultSet resultSet = dbc.getData(query);
+
+    if (resultSet.next()) {
+        em = resultSet.getString("email");
+        System.out.println("" + em);
+
+        if (em.equals(emailInput)) {
+            JOptionPane.showMessageDialog(null, "Email is already used!");
+            email.setText("");
+            return true;
+        }
+
+        usname = resultSet.getString("u_username");
+        System.out.println("" + usname);
+
+        if (usname.equals(user.getText())) {
+            JOptionPane.showMessageDialog(null, "Username is already used!");
+            user.setText("");
+            return true;
+        }
+    }
+    return false;
+} catch (SQLException ex) {
+    System.out.println("" + ex);
+    return false;
 }
-    
+    }
 
     
     @SuppressWarnings("unchecked")
